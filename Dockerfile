@@ -8,7 +8,7 @@ ADD src src
 RUN ["mvn", "package", "-DskipTests", "-P", "war-release"]
 
 
-FROM java:8-jre-alpine
+FROM openjdk:8-jre-alpine
 
 WORKDIR /owl2vowl
 COPY --from=build /var/lib/owl2vowl/target/owl2vowl.war .
